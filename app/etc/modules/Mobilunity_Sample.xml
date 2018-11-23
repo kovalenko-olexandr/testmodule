@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    local
+ * @package     Mobilunity_Sample
+ * @author      Kovalenko Olexandr <olexandr.filin@gmail.com>
+ */
+-->
+<config>
+    <modules>
+        <Mobilunity_Sample>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mobilunity_Sample>
+    </modules>
+</config>

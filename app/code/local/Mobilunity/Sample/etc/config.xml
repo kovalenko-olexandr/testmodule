@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    local
+ * @package     Mobilunity_Sample
+ * @author      Kovalenko Olexandr <olexandr.filin@gmail.com>
+ */
+-->
+<config>
+    <modules>
+        <Mobilunity_Sample>
+            <version>1.0.0</version>
+        </Mobilunity_Sample>
+    </modules>
+    <global>
+        <models>
+            <mobilunity_sample>
+                <class>Mobilunity_Sample_Model</class>
+                <resourceModel>mobilunity_sample_resource</resourceModel>
+            </mobilunity_sample>
+            <mobilunity_sample_resource>
+                <class>Mobilunity_Sample_Model_Resource</class>
+                <entities>
+                    <coefficient>
+                        <table>mobilunity_sample_coefficient</table>
+                    </coefficient>
+                </entities>
+            </mobilunity_sample_resource>
+        </models>
+        <helpers>
+            <mobilunity_sample>
+                <class>Mobilunity_Sample_Helper</class>
+            </mobilunity_sample>
+        </helpers>
+        <resources>
+            <mobilunity_sample_setup>
+                <setup>
+                    <module>Mobilunity_Sample</module>
+                </setup>
+            </mobilunity_sample_setup>
+        </resources>
+        <events>
+            <sales_order_place_after>
+                <observers>
+                    <mobilunity_sample>
+                        <class>mobilunity_sample/observer</class>
+                        <method>setDataDecimalFactor</method>
+                    </mobilunity_sample>
+                </observers>
+            </sales_order_place_after>
+        </events>
+    </global>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <mobilunity_options>
+                                            <title>Mobilunity</title>
+                                        </mobilunity_options>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <default>
+        <mobilunity_options>
+            <sample_group>
+                <enable>0</enable>
+                <decimal_factor>1</decimal_factor>
+            </sample_group>
+        </mobilunity_options>
+    </default>
+</config>
